@@ -2,8 +2,12 @@
 $(document).ready(function(){
   var currentIndex = 0;
   var sigmanautsLength = 0;
+  callAjax();
 
-  //setInterval(callAjax, 5000);
+  setInterval(function(){
+    currentIndex++;
+    callAjax();
+  }, 5000);
 
   $('#next').on('click',function(){
     currentIndex += 1;
@@ -19,7 +23,7 @@ $(document).ready(function(){
 
 
   function callAjax(){
-    //currentIndex++;
+
     $.ajax({
 
       type: "GET",
