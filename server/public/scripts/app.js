@@ -71,10 +71,10 @@ $(document).ready(function(){
 
 
   function appendDataToDom(sigmaData){
-    
+    $('#ajax-data').hide();
     $('#ajax-data').append('<p>' + sigmaData[currentIndex].name +
                        '</p><p>' + sigmaData[currentIndex].git_username +
                        '</p><p>' + sigmaData[currentIndex].shoutout + '</p>');
-
+    $('#ajax-data').fadeIn('slow');
   }
 });
