@@ -7,7 +7,7 @@ $(document).ready(function(){
     currentIndex += 1;
     callAjax();
   });
-  
+
   $('#previous').on('click',function(){
     currentIndex--;
     callAjax();
@@ -26,13 +26,13 @@ $(document).ready(function(){
         // sigmanautsLength = data.sigmanauts.length;
         var sigmaData = data.sigmanauts;
 
-
         if(currentIndex === sigmaData.length){
           currentIndex = 0;
         } else if(currentIndex < 0){
           currentIndex = sigmaData.length-1;
         }
         appendTableToDom(sigmaData);
+        appendDataToDom(sigmaData);
 
       }
     });
@@ -42,15 +42,19 @@ $(document).ready(function(){
 
 
   function appendTableToDom(sigmaData){
-    $('#ajax-table').empty();
-    $('#ajax-data').empty();
+    $('#ajax-data, #ajax-table').empty();
+
     $('#ajax-table').append('<tr></tr>');
     for(var i=0; i < sigmaData.length; i++){
       $('#ajax-table').find('tr').append('<td></td>');
     }
-    //$('#ajax-table').find('tr').children().last().data('index', i);
     $('#ajax-table tr td:nth-child('+(currentIndex+1)+')').addClass('red');
-    $('#ajax-data').append(sigmaData[currentIndex].name);
-    //console.log(sigmanautsLength);
+  }
+
+  
+  function appendDataToDom(sigmaData){
+    $('#ajax-data').append('<p>' + sigmaData[currentIndex].name +
+                       '</p><p>' + sigmaData[currentIndex].git_username +
+                       '</p><p>' + sigmaData[currentIndex].shoutout + '</p>');
   }
 });
