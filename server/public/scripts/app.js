@@ -3,6 +3,8 @@ $(document).ready(function(){
   var currentIndex = 0;
   var sigmanautsLength = 0;
 
+  //setInterval(callAjax, 5000);
+
   $('#next').on('click',function(){
     currentIndex += 1;
     callAjax();
@@ -14,7 +16,7 @@ $(document).ready(function(){
   });
 
 
-  //setInterval(callAjax, 5000);
+
 
   function callAjax(){
     //currentIndex++;
@@ -51,7 +53,7 @@ $(document).ready(function(){
     $('#ajax-table tr td:nth-child('+(currentIndex+1)+')').addClass('red');
   }
 
-  
+
   function appendDataToDom(sigmaData){
     $('#ajax-data').append('<p>' + sigmaData[currentIndex].name +
                        '</p><p>' + sigmaData[currentIndex].git_username +

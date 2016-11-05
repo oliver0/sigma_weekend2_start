@@ -1,7 +1,23 @@
+#ajax-table {
+  margin: 0 auto;
+}
+
 td {
   height: 10px;
   width: 10px;
   border: 1px solid black;
+}
+
+#next{
+  float:right;
+}
+
+#previous{
+  float:left;
+}
+
+#ajax-data {
+  height: 200px;
 }
 
 .red {
