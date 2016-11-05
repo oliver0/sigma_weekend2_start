@@ -4,17 +4,29 @@ $(document).ready(function(){
   var sigmanautsLength = 0;
   callAjax();
 
-  setInterval(function(){
+
+  var timer = setInterval(function(){
     currentIndex++;
     callAjax();
   }, 5000);
 
+  function resetInterval(){
+    clearInterval(timer);
+    timer = setInterval(function(){
+      currentIndex++;
+      callAjax();
+    }, 5000);
+  }
+
+
   $('#next').on('click',function(){
+    resetInterval();
     currentIndex += 1;
     callAjax();
   });
 
   $('#previous').on('click',function(){
+    resetInterval();
     currentIndex--;
     callAjax();
   });
@@ -59,8 +71,10 @@ $(document).ready(function(){
 
 
   function appendDataToDom(sigmaData){
+    
     $('#ajax-data').append('<p>' + sigmaData[currentIndex].name +
                        '</p><p>' + sigmaData[currentIndex].git_username +
                        '</p><p>' + sigmaData[currentIndex].shoutout + '</p>');
+
   }
 });
