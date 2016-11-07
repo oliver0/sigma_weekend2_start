@@ -44,11 +44,7 @@ $(document).ready(function(){
 
         appendTableToDom(sigmaData);
 
-
-        $el.fadeOut(function(){
-          appendDataToDom(sigmaData);
-          $el.fadeIn();
-        });
+        appendDataToDom(sigmaData);
 
       }
     });
@@ -63,7 +59,7 @@ $(document).ready(function(){
   }
 
   function appendTableToDom(sigmaData){
-    $('#ajax-data, #ajax-table').empty();
+    $('#ajax-table').empty();
 
     $('#ajax-table').append('<tr></tr>');
     for(var i=0; i < sigmaData.length; i++){
@@ -75,11 +71,17 @@ $(document).ready(function(){
 
   function appendDataToDom(sigmaData){
     var sigmanaut = sigmaData[currentIndex];
-    $el.append('<p id="name">' + sigmanaut.name + '</p>');
-    $el.append('<p><a href="https://github.com/' + sigmanaut.git_username +
-                       '" target="_blank">https://github.com/' + sigmanaut.git_username +
-                       '</a></p>');
-    $el.append('<p id="shoutout">"' + sigmanaut.shoutout + '"</p>');
+    $el.fadeOut(600, function(){
+      $('#ajax-data').empty();
+      $el.append('<p id="name">' + sigmanaut.name + '</p>');
+      $el.append('<p><a href="https://github.com/' + sigmanaut.git_username +
+                         '" target="_blank">https://github.com/' + sigmanaut.git_username +
+                         '</a></p>');
+      $el.append('<p id="shoutout">"' + sigmanaut.shoutout + '"</p>');
+      $el.fadeIn(600);
+    });
+
+
 
 
   }
