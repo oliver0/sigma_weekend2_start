@@ -1,4 +1,5 @@
 var currentIndex = 0;
+var timer;
 $(document).ready(function(){
 
   var TIME_INTERVAL = 10000;// in milliseconds
@@ -7,7 +8,7 @@ $(document).ready(function(){
   callAjax();
   startTimer();
   function startTimer(){
-    var timer = setInterval(function(){
+    timer = setInterval(function(){
       currentIndex++;
       callAjax();
     }, TIME_INTERVAL);
@@ -15,7 +16,7 @@ $(document).ready(function(){
 
   function resetInterval(){
     clearInterval(timer);
-    tstartTimer();
+    startTimer();
   }
 
 
