@@ -78,10 +78,10 @@ $(document).ready(function(){
 
   function appendDataToDom(sigmaData){
     var sigmanaut = sigmaData[currentIndex];
-    $el.append('<p>' + sigmanaut.name +
+    $el.append('<p id="name">' + sigmanaut.name +
                        '</p><p><a href="https://github.com/' + sigmanaut.git_username +
                        '" target="_blank">https://github.com/' + sigmanaut.git_username +
-                       '</a></p><p>' + sigmanaut.shoutout + '</p>');
+                       '</a></p><p id="shoutout">"' + sigmanaut.shoutout + '"</p>');
 
 
   }

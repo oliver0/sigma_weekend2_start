@@ -1,13 +1,14 @@
 body{
-  background-color: #3C6E71;
+  background-color: #FFC857 ;
   padding: 100px 200px 0 200px;
 }
 
 h1 {
   text-align: center;
-  text-shadow: 2px 2px 2px black;
-  font-size: 40px;
-  color:white;
+  text-shadow: 1px 1px 2px black;
+  font-size: 50px;
+  color: #DB3A34;
+  font-family: courier;
 }
 
 td {
@@ -18,26 +19,21 @@ td {
   border-radius: 50%;
 }
 
+button{
+  background-color: #084C61;
+  color: white;
+  font-style: bold;
+}
+
+
 #container {
-  height: 200px;
-  width: 400px;
+  border: 2px solid #323031;
+  height: 230px;
+  width: 450px;
   background-color: white;
   margin: 50px auto 50px auto;
   border-radius: 10px;
 
-}
-
-
-#next{
-  margin-right: auto;
-  background-color: #284B63;
-  color: white;
-}
-
-#previous{
-  margin-left: auto;
-  background-color: #284B63;
-  color: white;
 }
 
 #ajax-data {
@@ -50,7 +46,16 @@ td {
   margin: 0 auto;
 }
 
+#name{
+  font-size: 20px;
+  text-decoration: underline;
+  font-style: bold;
+}
+#shoutout{
+  font-style:italic;
+}
+
 
 .red {
-  background-color: red;
+  background-color: #DB3A34;
 }
