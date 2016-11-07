@@ -1,24 +1,21 @@
-
+var currentIndex = 0;
 $(document).ready(function(){
-  var currentIndex = 0;
+
   var TIME_INTERVAL = 10000;// in milliseconds
   var $el = $('#ajax-data');
 
   callAjax();
-
-
-  var timer = setInterval(function(){
-    currentIndex++;
-    callAjax();
-  }, TIME_INTERVAL);
+  startTimer();
+  function startTimer(){
+    var timer = setInterval(function(){
+      currentIndex++;
+      callAjax();
+    }, TIME_INTERVAL);
+  }
 
   function resetInterval(){
     clearInterval(timer);
-    timer = setInterval(function(){
-      currentIndex++;
-      callAjax();
-
-    }, TIME_INTERVAL);
+    tstartTimer();
   }
 
 
@@ -78,10 +75,11 @@ $(document).ready(function(){
 
   function appendDataToDom(sigmaData){
     var sigmanaut = sigmaData[currentIndex];
-    $el.append('<p id="name">' + sigmanaut.name +
-                       '</p><p><a href="https://github.com/' + sigmanaut.git_username +
+    $el.append('<p id="name">' + sigmanaut.name + '</p>');
+    $el.append('<p><a href="https://github.com/' + sigmanaut.git_username +
                        '" target="_blank">https://github.com/' + sigmanaut.git_username +
-                       '</a></p><p id="shoutout">"' + sigmanaut.shoutout + '"</p>');
+                       '</a></p>');
+    $el.append('<p id="shoutout">"' + sigmanaut.shoutout + '"</p>');
 
 
   }

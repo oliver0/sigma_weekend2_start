@@ -24,6 +24,11 @@ button{
   font-style: bold;
 }
 
+img{
+  width: 150px;
+  height: 150px;
+}
+
 #container{
   margin: 100px auto;
   overflow: scroll;
